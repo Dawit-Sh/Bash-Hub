@@ -1,6 +1,6 @@
 
 # Bash-Hub
-All the projects i created to aid me in learning bash 
+All the simple projects i created to aid me in learning bash 
 
 
 <div align="center">
