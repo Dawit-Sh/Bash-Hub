@@ -1,0 +1,29 @@
+#!/bin/bash 
+
+BIBlue='\033[1;94m'
+IYellow='\033[0;93m'
+IGreen='\033[0;92m'
+Color_Off='\033[0m'
+
+mapfile -t myProg < Programs
+echo -e "⚠️Make Sure you have listed all the programs in the file."
+echo -en "${IGreen}Enter Package Manager:${Color_Off}"
+read pkm 
+
+case $pkm in 
+    apt) 
+        sudo apt install -y ${myProg[*]}
+        ;;
+    zypper)
+        sudo zypper install -y ${myProg[*]}
+        ;;
+    rpm)
+        sudo rpm -i -y ${myProg[*]}
+        ;;
+    pacman)
+        sudo pacman -S -y ${myProg[*]}
+        ;;
+    *)
+        echo "${IYellow}Package Manager Not Supported!${Color_Off}"
+    esac
+

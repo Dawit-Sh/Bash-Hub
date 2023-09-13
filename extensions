@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Declare an empty array to store the file extensions
+file_extensions=()
+
+# Get a list of all files in the current directory
+files=$(ls)
+
+# Iterate over the list of files and extract the file extensions
+for file in $files; do
+  # Extract the file extension
+  extension="${file##*.}"
+
+  # Add the file extension to the array
+  file_extensions+=($extension)
+done
+
+# Print the list of file extensions
+echo "File extensions in the current directory:"
+for extension in "${file_extensions[@]}"; do
+  echo "$extension"
+done

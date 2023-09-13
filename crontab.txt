@@ -1,0 +1,29 @@
+To add a script to your crontab so it runs every 20 minutes, you need to edit your crontab file. You can do this by running the following command:
+
+crontab -e
+
+This will open your crontab file in your default text editor. The crontab file is a text file that contains a list of commands that you want to run at regular intervals.
+
+To add a script to run every 20 minutes, you need to add the following line to your crontab file:
+
+*/20 * * * * /path/to/script.sh
+
+The first five fields in the crontab line specify the following:
+
+    Minute (0-59)
+    Hour (0-23)
+    Day of the month (1-31)
+    Month (1-12)
+    Day of the week (0-7, where 0 is Sunday and 7 is Saturday)
+
+The asterisk (*) in the minute field means that the script will run every minute.
+
+The path to the script is the full path to the script file.
+
+Once you have added the line to your crontab file, save and close the file. The script will now run every 20 minutes.
+
+Here is an example of a crontab line that would run a script called battery_level.sh every 20 minutes:
+
+*/20 * * * * /home/user/battery_level.sh
+
+I hope this helps! Let me know if you have any other questions.

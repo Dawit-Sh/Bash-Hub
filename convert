@@ -1,0 +1,36 @@
+#!/bin/bash
+
+BIRed='\033[1;91m'
+Color_Off='\033[0m'
+prog=pandoc
+mdf=$(ls *.md)
+
+install_pandoc() {
+    echo -e "Enter Package Manager: "
+    read pkm 
+    case $pkm in
+        apt)
+            sudo apt install -y $prog
+         ;;
+
+    zypper)
+        sudo zypper in -y $prog 
+        ;;
+    pacman)
+        sudo pacman -S -y $prog 
+        ;;
+    *)
+        echo -e "${BIRed}Package Manager Not found please install $prog ${Color_Off}"
+esac    
+}
+pandoc --version > /dev/null 2>&1
+if [ $? -eq 0 ]; 
+then
+    echo -n "Enter PDF Name: "
+    read -r pname
+    pandoc $mdf -o Converted.pdf
+    mv Converted.pdf $pname.pdf
+else
+    install_pandoc
+fi  
+

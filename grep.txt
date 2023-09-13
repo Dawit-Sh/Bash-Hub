@@ -1,0 +1,36 @@
+ 1)    Search any line that contains the word in filename on Linux:
+    # grep 'word' filename
+  
+2)   Perform a case-insensitive search for the word ‘bar’ in Linux and Unix:
+    # grep -i 'bar' file1
+   
+3)  Look for all files in the current directory and in all of its subdirectories in Linux for the word ‘httpd’:
+    # grep -R 'httpd' .
+   
+4)  Search and display the total number of times that the string ‘nixcraft’ appears in a file named frontpage.md:
+   # grep -c 'linux' frontpage.md
+
+5) search recursively i.e. read all files under each directory for a string 
+    # grep -r "search" /etc/
+    # grep -R "search" /etc/
+
+6) searh for two different words 
+    # grep -E -w 'word1|word2' /path/to/file
+
+7) force grep to ignore case distinctions in patterns and data. For example, when I search for ‘bar’, match ‘BAR’, ‘Bar’, ‘BaR’ and so on:
+    # grep -i 'bar' /path/to/file
+
+8) print all line that do not contain the word bar
+    # grep -v bar /path/to/file
+
+9) see the lines before your matches Try passing the -B to the grep:
+    # grep -B NUM "word" file
+    # grep -B 3 "foo" file1
+
+10) display the lines after your matches by passing the -A to the grep:
+    # grep -A NUM "string" /path/to/file 
+    # grep -A 4 "dropped" /var/log/ufw.log
+
+11) Use the -l option to list file name whose contents mention main()
+    # grep -l 'main' *.c
+
