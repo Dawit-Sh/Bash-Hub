@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+myarr=()
+
+read -p "enter Names: " nms 
+read -a myarr <<< $nms
+
+echo "the first name ${myarr[0]}"
+

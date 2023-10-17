@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+read -p "age: " age 
+until [ $age -eq 18 ]
+do
+    echo "Underage client"
+done 
